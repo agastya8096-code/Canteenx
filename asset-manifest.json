@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/Canteenx/static/css/main.5315c3a9.css",
-    "main.js": "/Canteenx/static/js/main.9a83fbaa.js",
+    "main.css": "/Canteenx/static/css/main.8c8c878d.css",
+    "main.js": "/Canteenx/static/js/main.fced4666.js",
+    "static/js/453.ead97cf1.chunk.js": "/Canteenx/static/js/453.ead97cf1.chunk.js",
     "index.html": "/Canteenx/index.html",
-    "main.5315c3a9.css.map": "/Canteenx/static/css/main.5315c3a9.css.map",
-    "main.9a83fbaa.js.map": "/Canteenx/static/js/main.9a83fbaa.js.map"
+    "main.8c8c878d.css.map": "/Canteenx/static/css/main.8c8c878d.css.map",
+    "main.fced4666.js.map": "/Canteenx/static/js/main.fced4666.js.map",
+    "453.ead97cf1.chunk.js.map": "/Canteenx/static/js/453.ead97cf1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5315c3a9.css",
-    "static/js/main.9a83fbaa.js"
+    "static/css/main.8c8c878d.css",
+    "static/js/main.fced4666.js"
   ]
 }
