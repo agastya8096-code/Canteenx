@@ -1,38 +1,1274 @@
-.App {
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff8f0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+  background-color: orange;
+  color: white;
+  padding: 15px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button {
+  background-color: white;
+  color: orange;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  padding: 0 20px;
+  margin: 30px auto 20px;
+}
+
+.search-container input {
+  width: 400px;
+  max-width: 100%;
+
+  padding: 12px 20px;
+
+  border-radius: 30px;
+  border: 2px solid #ff9800;
+
+  outline: none;
+
+  font-size: 16px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   CATEGORY BUTTONS - DESKTOP
+========================================================= */
+
+.category-buttons {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 20px auto 30px;
+
+  padding: 0 20px;
+}
+
+
+/* Category button */
+
+.category-buttons button {
+  flex: 0 0 auto;
+
+  border: none;
+
+  background: white;
+  color: #333;
+
+  padding: 11px 18px;
+
+  border-radius: 25px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.10);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* Hover */
+
+.category-buttons button:hover {
+  background: #ff9800;
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* Active category */
+
+.category-buttons button.active-category {
+  background: #ff9800;
+  color: white;
+
+  box-shadow:
+    0 4px 12px rgba(255, 152, 0, 0.35);
+}
+
+
+/* Click */
+
+.category-buttons button:active {
+  transform: scale(0.96);
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding: 0 10px;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   FOOD CONTAINER
+========================================================= */
+
+.food-container {
+  flex: 1;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  justify-content: flex-start;
+
+  align-content: flex-start;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   FOOD CARD
+========================================================= */
+
+.food-card {
+  width: 250px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 15px;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   FOOD IMAGE
+========================================================= */
+
+.food-image-container {
+  width: 100%;
+
+  height: 180px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+}
+
+.food-card img,
+.food-image {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================================
+   FOOD DETAILS
+========================================================= */
+
+.food-details {
+  width: 100%;
+}
+
+.food-details h2 {
+  margin: 8px 0;
+
+  font-size: 20px;
+}
+
+.food-category {
+  margin: 5px 0;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.food-price {
+  margin: 6px 0;
+
+  color: #ff9800;
+
+  font-size: 18px;
+
+  font-weight: bold;
+}
+
+.available-text {
+  margin: 6px 0;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   GENERAL BUTTON
+========================================================= */
+
+button {
+  background: orange;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   ADD BUTTON
+========================================================= */
+
+.add-btn {
+  width: 100%;
+
+  background: #ff9800;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px;
+
+  border-radius: 7px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background: #f57c00;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.swiggy-qty {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 8px;
+}
+
+.swiggy-qty button {
+  width: 35px;
+
+  height: 35px;
+
+  padding: 0;
+
+  font-size: 20px;
+
+  border-radius: 6px;
+}
+
+.swiggy-qty button:disabled {
+  background: #ddd;
+
+  color: #999;
+
+  cursor: not-allowed;
+
+  opacity: 0.6;
+}
+
+.qty-number {
+  min-width: 25px;
+
+  text-align: center;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   OUT OF STOCK
+========================================================= */
+
+.out-of-stock-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: white;
+
+  font-weight: bold;
+
+  border-radius: 12px;
+}
+
+.out-of-stock-btn {
+  width: 100%;
+
+  background: #d32f2f;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px;
+
+  border-radius: 7px;
+}
+
+
+/* =========================================================
+   CART SIDEBAR
+========================================================= */
+
+.cart-sidebar {
+  position: sticky;
+
+  top: 120px;
+
+  width: 280px;
+
+  flex-shrink: 0;
+
+  background: white;
+
+  padding: 20px;
+
+  border-radius: 20px;
+
+  border: 2px solid #ff9800;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15);
+
+  max-height: 75vh;
+
+  overflow-y: auto;
+}
+
+.cart-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cart-sidebar::-webkit-scrollbar-thumb {
+  background: #ff9800;
+
+  border-radius: 10px;
+}
+
+.cart-sidebar h2 {
+  text-align: center;
+
+  color: orange;
+}
+
+.cart-sidebar p {
+  margin: 8px 0;
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   CART ITEM
+========================================================= */
+
+.cart-item {
+  background: white;
+
+  border: 1px solid #ddd;
+
+  border-radius: 12px;
+
+  padding: 12px;
+
+  margin-bottom: 12px;
+}
+
+.cart-item h3 {
+  margin-top: 0;
+}
+
+.cart-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.cart-controls button {
+  width: 35px;
+
+  height: 35px;
+
+  padding: 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.cart-controls .cart-plus:disabled {
+  background: #ddd;
+
+  color: #999;
+
+  cursor: not-allowed;
+}
+
+.cart-delete {
+  background: #ff9800;
+}
+
+.cart-price {
+  font-weight: bold;
+}
+
+.max-message {
+  color: #ff6f00;
+
+  font-size: 12px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+.checkout-btn {
+  width: 100%;
+
+  display: block;
+
+  background: #20d055;
+
+  color: white;
+
+  padding: 12px 25px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #18b84a;
+}
+
+
+/* =========================================================
+   CART TABLE
+========================================================= */
+
+.cart-table {
+  width: 80%;
+
+  margin: 20px auto;
+
+  border-collapse: collapse;
+
+  background: white;
+}
+
+.cart-table th,
+.cart-table td {
+  border: 1px solid #ddd;
+
+  padding: 12px;
+
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.cart-table th {
+  background-color: orange;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.login-container {
+  width: 350px;
+
+  max-width: 90%;
+
+  margin: 100px auto;
+
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 2px 10px gray;
+
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.login-container input {
+  width: 90%;
+
+  padding: 10px;
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin-title {
+  text-align: center;
+
+  margin: 20px 0;
+}
+
+.admin-food-form {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  padding: 0 15px;
+}
+
+.admin-food-form input {
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  outline: none;
+}
+
+.admin-food-form button {
+  background: #ff9800;
+}
+
+
+/* =========================================================
+   NO FOOD
+========================================================= */
+
+.no-food {
+  width: 100%;
+
+  text-align: center;
+
+  padding: 50px 20px;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .main-content {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+
+  .food-container {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+  }
+
+
+  .food-card {
+    width: 100%;
+  }
+
+
+  .cart-sidebar {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 25px auto;
+  }
+
+
+  .category-buttons {
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 15px;
+  }
+
+
+  .category-buttons button {
+    padding: 9px 14px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+
+  /* =======================================================
+     NAVBAR
+  ======================================================= */
+
+  .navbar {
+    height: auto;
+
+    min-height: 65px;
+
+    padding: 10px 12px;
+
+    flex-wrap: wrap;
+  }
+
+  .navbar-logo {
+    font-size: 21px;
+  }
+
+  .logo-icon {
+    font-size: 23px;
+  }
+
+  .navbar-menu {
+    gap: 3px;
+  }
+
+  .nav-item {
+    padding: 8px;
+
+    font-size: 13px;
+  }
+
+  .nav-icon {
+    font-size: 17px;
+  }
+
+  .logout-button {
+    padding: 8px 10px;
+
+    font-size: 13px;
+  }
+
+
+  /* =======================================================
+     SEARCH
+  ======================================================= */
+
+  .search-container {
+    width: 100%;
+
+    padding: 0 15px;
+
+    margin: 20px auto;
+  }
+
+  .search-container input {
+    width: 100%;
+
+    max-width: 100%;
+
+    font-size: 15px;
+  }
+
+
+  /* =======================================================
+     CATEGORY BUTTONS
+  ======================================================= */
+
+  .category-buttons {
+
+    /* One horizontal row */
+
+    display: flex;
+
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    /* Horizontal scrolling */
+
+    overflow-x: auto;
+
+    /* Prevent vertical expansion */
+
+    overflow-y: hidden;
+
+    /* Space */
+
+    gap: 8px;
+
+    /* Mobile padding */
+
+    padding: 5px 15px 12px;
+
+    margin: 10px 0 20px;
+
+    width: 100%;
+
+    max-width: none;
+
+    /* Prevent box overflow */
+
+    box-sizing: border-box;
+
+    /* Smooth iPhone scrolling */
+
+    -webkit-overflow-scrolling: touch;
+
+    /* Hide Firefox scrollbar */
+
+    scrollbar-width: none;
+  }
+
+
+  /* Hide Chrome / Safari scrollbar */
+
+  .category-buttons::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  /* Mobile category button */
+
+  .category-buttons button {
+
+    flex: 0 0 auto;
+
+    white-space: nowrap;
+
+    padding: 9px 14px;
+
+    font-size: 13px;
+
+    border-radius: 20px;
+
+    min-height: 38px;
+
+    box-shadow:
+      0 2px 7px rgba(0, 0, 0, 0.12);
+
+    /* Prevent weird browser tap behavior */
+
+    touch-action: manipulation;
+  }
+
+
+  /* Active mobile category */
+
+  .category-buttons button.active-category {
+    background: #ff9800;
+
+    color: white;
+
+    box-shadow:
+      0 3px 8px rgba(255, 152, 0, 0.35);
+  }
+
+
+  /* No hover movement on mobile */
+
+  .category-buttons button:hover {
+    transform: none;
+  }
+
+
+  /* =======================================================
+     MAIN CONTENT
+  ======================================================= */
+
+  .main-content {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    padding: 10px;
+
+    gap: 15px;
+  }
+
+
+  /* =======================================================
+     FOOD GRID
+  ======================================================= */
+
+  .food-container {
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    width: 100%;
+  }
+
+
+  /* =======================================================
+     FOOD CARD
+  ======================================================= */
+
+  .food-card {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+  }
+
+
+  .food-card:hover {
+    transform: none;
+  }
+
+
+  /* =======================================================
+     FOOD IMAGE
+  ======================================================= */
+
+  .food-image-container {
+    width: 100%;
+
+    height: 135px;
+
+    overflow: hidden;
+  }
+
+  .food-image {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+
+  /* =======================================================
+     FOOD DETAILS
+  ======================================================= */
+
+  .food-details {
+    padding: 5px;
+  }
+
+  .food-details h2 {
+    font-size: 15px;
+
+    margin: 5px 0;
+
+    line-height: 1.2;
+  }
+
+  .food-category {
+    font-size: 11px;
+
+    margin: 4px 0;
+  }
+
+  .food-price {
+    font-size: 15px;
+
+    margin: 5px 0;
+  }
+
+  .available-text {
+    font-size: 11px;
+
+    margin: 5px 0;
+  }
+
+
+  /* =======================================================
+     ADD BUTTON
+  ======================================================= */
+
+  .add-btn {
+    width: 100%;
+
+    padding: 8px;
+
+    font-size: 13px;
+
+    border-radius: 7px;
+  }
+
+
+  /* =======================================================
+     QUANTITY
+  ======================================================= */
+
+  .swiggy-qty {
+    gap: 7px;
+  }
+
+  .swiggy-qty button {
+    width: 30px;
+
+    height: 30px;
+
+    padding: 0;
+
+    font-size: 18px;
+  }
+
+  .qty-number {
+    min-width: 20px;
+
+    font-size: 14px;
+  }
+
+
+  /* =======================================================
+     OUT OF STOCK
+  ======================================================= */
+
+  .out-of-stock-btn {
+    width: 100%;
+
+    padding: 8px;
+
+    font-size: 11px;
+  }
+
+
+  /* =======================================================
+     CART
+  ======================================================= */
+
+  .cart-sidebar {
+
+    position: relative;
+
+    top: auto;
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 10px 0 20px;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    max-height: none;
+  }
+
+
+  .cart-sidebar h2 {
+    font-size: 20px;
+  }
+
+
+  .cart-sidebar h3 {
+    font-size: 17px;
+  }
+
+
+  .cart-item {
+    width: 100%;
+  }
+
+
+  .cart-controls button {
+    touch-action: manipulation;
+  }
+
+
+  /* =======================================================
+     CHECKOUT
+  ======================================================= */
+
+  .checkout-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    font-size: 15px;
+  }
+
+
+  /* =======================================================
+     ADMIN FORM
+  ======================================================= */
+
+  .admin-title {
+    font-size: 20px;
+
+    margin-top: 20px;
+  }
+
+
+  .admin-food-form {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 10px 15px;
+
+    gap: 8px;
+  }
+
+
+  .admin-food-form input {
+    width: 100%;
+
+    margin: 0 !important;
+  }
+
+
+  .admin-food-form button {
+    width: 100%;
+
+    margin: 0 !important;
+  }
+
+
+  /* =======================================================
+     LOGIN
+  ======================================================= */
+
+  .login-container {
+    width: 90%;
+
+    max-width: 350px;
+
+    margin: 60px auto;
+
+    padding: 25px 15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .navbar-logo {
+    font-size: 18px;
+  }
+
+
+  .category-buttons {
+    gap: 6px;
+
+    padding-left: 10px;
+
+    padding-right: 10px;
+  }
+
+
+  .category-buttons button {
+    padding: 8px 12px;
+
+    font-size: 12px;
+
+    min-height: 35px;
+  }
+
+
+  .food-container {
+    gap: 8px;
+  }
+
+
+  .food-card {
+    padding: 8px;
+  }
+
+
+  .food-image-container {
+    height: 115px;
+  }
+
+
+  .food-details {
+    padding: 5px;
+  }
+
+
+  .food-details h2 {
+    font-size: 13px;
+  }
+
+
+  .food-price {
+    font-size: 14px;
+  }
+
+
+  .add-btn {
+    font-size: 12px;
+
+    padding: 7px;
+  }
+
+
+  .swiggy-qty button {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 16px;
   }
 }
